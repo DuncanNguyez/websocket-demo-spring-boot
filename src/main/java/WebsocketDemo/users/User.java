@@ -17,11 +17,17 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue
-    private Integer id   ;
+    private Integer id;
+
+    @Column(unique = true)
     private String username;
+
     private String email;
     private String password;
     private String image;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @OneToMany(mappedBy = "sender")
     private List<ChatMessage> messagesSent;
@@ -31,4 +37,6 @@ public class User {
 
     @ManyToMany
     private List<ChatRoom> chatRooms;
+
+
 }
