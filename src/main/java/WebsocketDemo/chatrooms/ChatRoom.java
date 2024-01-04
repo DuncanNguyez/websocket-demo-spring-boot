@@ -13,15 +13,18 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
+
 public class ChatRoom {
     @Id
     @GeneratedValue
     private Integer id;
 
+    private String name;
+
     @Enumerated(EnumType.STRING)
     private ChatRoomType type;
 
-    @ManyToMany(mappedBy = "chatRooms")
+    @ManyToMany
     private List<User> members;
 
     @OneToMany(mappedBy = "recipient")

@@ -35,8 +35,6 @@ public class User {
     @ManyToMany
     private List<ChatMessage> messagesWatched;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "members")
     private List<ChatRoom> chatRooms;
-
-
 }

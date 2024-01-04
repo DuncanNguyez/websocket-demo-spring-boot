@@ -4,6 +4,7 @@ import WebsocketDemo.chatrooms.ChatRoom;
 import WebsocketDemo.users.User;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.util.Date;
 import java.util.List;
@@ -14,11 +15,13 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
-public class ChatMessage {
+public class    ChatMessage {
     @Id
     @GeneratedValue
     private Integer id;
     private String content;
+
+    @CreatedDate
     private Date time;
 
     @ManyToOne

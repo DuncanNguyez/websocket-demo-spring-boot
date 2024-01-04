@@ -1,0 +1,132 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <style>
+      .container {
+        height: 600px;
+        background-color: rgb(23, 52, 48);
+        display: grid;
+        gap: 1px;
+        grid-auto-rows: minmax(100px, auto);
+        /* grid-template-columns: repeat(4, 1fr); */
+      }
+      .listRooms {
+        background-color: rgb(62, 37, 85);
+        overflow: auto;
+        grid-column: 1;
+        grid-row: 1/5;
+        display: flex;
+        flex-direction: column;
+      }
+      .logout {
+        text-align: center;
+        grid-column: 1;
+        grid-row: 5;
+      }
+      .listMessages {
+        background-color: rgb(200, 189, 206);
+        overflow: auto;
+        grid-column: 2/5;
+        grid-row: 1/5;
+      }
+      .chat {
+        background-color: rgb(80, 37, 181);
+        overflow: auto;
+        grid-column: 2/5;
+        grid-row: 5;
+      }
+      .room h3 {
+        color: white;
+        font-weight: 600;
+      }
+      .room {
+        padding: 5px;
+        cursor: pointer;
+      }
+      .listMessages span {
+        display: inline-block;
+        border-radius: 4px;
+      }
+      .listMessages .right {
+        text-align: right;
+      }
+      .active {
+        background-color: #839281;
+      }
+    </style>
+    <div class="" style="width: 800px; margin: auto; margin-top: 40px">
+      <h1 class="text-danger text-center">Chat App</h1>
+      <div class="container">
+        <div class="listRooms">
+          <div class="room">
+            <h3>name</h3>
+            <div>member</div>
+          </div>
+        </div>
+        <div class="logout">
+          <div class="p-2">
+            <input
+              style="width: 100%"
+              type="text"
+              class="form-control"
+              id="addFriend"
+              placeholder="add friend by username"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <a href="/logout" class="mt-4 btn btn-danger">Logout</a>
+        </div>
+        <div class="listMessages">
+          <div class="m-3">
+            <span class="p-2 messageItem bg-white text-primary"> hi </span>
+          </div>
+          <div class="m-3 right">
+            <span class="p-2 messageItem bg-primary text-white"> hi </span>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="p-2">
+            <input
+              type="text"
+              class="form-control"
+              id="message"
+              placeholder="message"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="text-center text-secondary p-2 username">
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.js"
+      integrity="sha512-aHuAnb+FZ/yM5zYvdiA8q0sxLdsBQ3PRwO8D/08qsenCLQ2gWsosB43Cn1X8esAz0IpaC7Ns5cAPyKIdJQ0hNw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"
+      integrity="sha512-tL4PIUsPy+Rks1go4kQG8M8/ItpRMvKnbBjQm4d2DQnFwgcBYRRN00QdyQnWSCwNMsoY/MfJY8nHp2CzlNdtZA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/main.js"></script>
+  </body>
+</html>
